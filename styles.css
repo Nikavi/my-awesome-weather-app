@@ -28,6 +28,7 @@ li {
 }
 small {
   text-align: center;
+  display: block;
 }
 .weather-app {
   border: 1px solid #dadde1;
