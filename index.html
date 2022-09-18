@@ -3,6 +3,7 @@
 
 <head>
   <title>Weather app🌈</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,117 +18,90 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="weather-app">
-      <form class="weather-search-form" id="search-city-form">
+  <div class="text-center img-app" style="/* position: relative; */ padding: 2%">
+
+    <div class="container">
+      <div class="weather-app">
+        <form class="weather-search-form" id="search-city-form">
+          <div class="row">
+            <div class="col-6">
+              <input type="search" placeholder="type a city.." autofocus="on" autocomplete="off"
+                class="form-control shadow-sm" id="input-city" />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="search" class="form-control btn btn-primary shadow-sm" id="enter-city" />
+            </div>
+            <div class="col-3">
+              <button class="btn btn-success shadown-sm w-100" id="current-location-button">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <h1 id="city">
+          Stockholm,
+          <span id="country">Sweeden</span>
+        </h1>
+        <ul>
+          <li id="date">
+            Wednesday, 30 August 22:00
+          </li>
+          <li id="description">
+            Partly Cloudy
+          </li>
+        </ul>
         <div class="row">
           <div class="col-6">
-            <input type="search" placeholder="type a city.." autofocus="on" autocomplete="off"
-              class="form-control shadow-sm" id="input-city" />
+            <div class="clearfix">
+              <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy icon"
+                class="weather-icon float-left" />
+              <div class="float-left">
+                <span class="temperature" id="current-temperature"> 19</span><span class="units">
+                  <a href="#" id="celsius-link"> ˚C </a> |
+                  <a href="#" id="fahrenheid-link">˚F</a>
+                </span>
+              </div>
+            </div>
           </div>
-          <div class="col-3">
-            <input type="submit" value="search" class="form-control btn btn-primary shadow-sm" id="enter-city" />
-          </div>
-          <div class="col-3">
-            <button class="btn btn-success shadown-sm w-100" id="current-location-button">
-              Current
-            </button>
-          </div>
-        </div>
-      </form>
-      <h1 id="city">
-        Stockholm,
-        <span id="country">Sweeden</span>
-      </h1>
-      <ul>
-        <li id="date">
-          Wednesday, 30 August 22:00
-        </li>
-        <li id="description">
-          Partly Cloudy
-        </li>
-      </ul>
-      <div class="row">
-        <div class="col-6">
-          <div class="clearfix">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy icon"
-              class="weather-icon float-left" />
-            <div class="float-left">
-              <span class="temperature" id="current-temperature"> 19</span><span class="units">
-                <a href="#" id="celsius-link"> ˚C </a> |
-                <a href="#" id="fahrenheid-link">˚F</a>
-              </span>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary">Temperature</button>
+              <button type="button" class="btn btn-primary">Rain</button>
+              <button type="button" class="btn btn-primary">Wind</button>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <ul>
-            <li>Humidity: <span id="humidity"></span> %</li>
-            <li>Wind: <span id="wind"></span> km/h</li>
-          </ul>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary">Temperature</button>
-            <button type="button" class="btn btn-primary">Rain</button>
-            <button type="button" class="btn btn-primary">Wind</button>
-          </div>
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col sm day_block">
+                Monday <br /> 20 September
+                <br /> 15˚C
+              </div>
+              <div class="col sm day_block">
+                  Tuesday <br /> 21 September
+                  <br /> 14˚C
+              </div>
+              <div class="col sm day_block">
+                  Wednesday <br /> 22 September
+                  <br /> 12˚C
+              </div>
+              <div class="col sm day_block">
+                  Thursday <br /> 23 September
+                  <br /> 12˚C
+              </div>
+              <div class="col sm day_block">
+                Friday <br /> 24 September
+                <br /> 13˚C
+              </div>
+              <div class="col sm day_block">
+                Saturday <br /> 25 September
+                <br /> 14˚C
+              </div>
         </div>
-      </div>
-      <div class="days cleanfix">
-        <div class="day_block">
-          <div class="day_block-data">
-            Mon 25 9:00
-          </div>
-          <img class="day_block-image" src="image/d000.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">15</span>
-          </div>
-        </div>
-        <div class="day_block">
-          <div class="day_block-data">
-            Tue 26 9:00
-          </div>
-          <img class="day_block-image" src="image/d100.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">13</span>
-          </div>
-        </div>
-        <div class="day_block">
-          <div class="day_block-data">
-            Wed 27 9:00
-          </div>
-          <img class="day_block-image" src="image/d220.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">12</span>
-          </div>
-        </div>
-        <div class="day_block">
-          <div class="day_block-data">
-            Thr 28 9:00
-          </div>
-          <img class="day_block-image" src="image/d300.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">16</span>
-          </div>
-        </div>
-        <div class="day_block">
-          <div class="day_block-data">
-            Fr 29 9:00
-          </div>
-          <img class="day_block-image" src="image/d400.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">14</span>
-          </div>
-        </div>
-        <div class="day_block">
-          <div class="day_block-data">
-            Sat 30 9:00
-          </div>
-          <img class="day_block-image" src="image/d410.jpg">
-          <div class="day_block-temp">
-            <span class="day_block-temp">11</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <small>
