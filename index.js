@@ -1,43 +1,47 @@
 // Let current day
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+  let dateCr = date.getDate();
+  // calculate the date
+  return `${day}, ${dateCr} ${month} ${hours}:${minutes}`;
+}
 
-// Let current time
-let time = now.getHours();
-if (time < 10) {
-  time = `0${time}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let presentData = document.querySelector("#date");
-presentData.innerHTML = `${day}, ${date} ${month} ${time}:${minutes}`;
+
+//let presentData = document.querySelector("#date");
+//presentData.innerHTML = `${day}, ${date} ${month} ${time}:${minutes}`;
 
 // Let convert between °C/°F
 function showCelcius(event) {
@@ -89,6 +93,8 @@ function showWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function searchCity(event) {
   event.preventDefault();
