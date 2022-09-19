@@ -22,91 +22,91 @@
 
     <div class="container">
       <div class="weather-app-wrapper">
-      <div class="weather-app">
-        <form class="weather-search-form" id="search-city-form">
+        <div class="weather-app">
+          <form class="weather-search-form" id="search-city-form">
+            <div class="row">
+              <div class="col-6">
+                <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
+                  class="form-control shadow-sm" id="input-city" />
+              </div>
+              <div class="col-3">
+                <input type="submit" value="search" class="form-control btn btn-primary shadow-sm" id="enter-city" />
+              </div>
+              <div class="col-3">
+                <button class="btn btn-success shadown-sm w-100" id="current-location-button">
+                  Current
+                </button>
+              </div>
+            </div>
+          </form>
+          <h1 id="city">
+            Stockholm,
+            <span id="country">Sweeden</span>
+          </h1>
+          <ul>
+            <li>Last updated at <span id="date">
+                Wednesday, 30 August 22:00
+              </span>
+            </li>
+            <li id="description">
+              Partly Cloudy
+            </li>
+          </ul>
           <div class="row">
             <div class="col-6">
-              <input type="search" placeholder="type a city.." autofocus="on" autocomplete="off"
-                class="form-control shadow-sm" id="input-city" />
+              <div class="clearfix">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy icon"
+                  class="weather-icon float-left" id="icon" />
+                <div class="float-left">
+                  <span class="temperature" id="current-temperature"> 19</span><span class="units">
+                    <a href="#" id="celsius-link"> ˚C </a> |
+                    <a href="#" id="fahrenheid-link">˚F</a>
+                  </span>
+                </div>
+              </div>
             </div>
-            <div class="col-3">
-              <input type="submit" value="search" class="form-control btn btn-primary shadow-sm" id="enter-city" />
-            </div>
-            <div class="col-3">
-              <button class="btn btn-success shadown-sm w-100" id="current-location-button">
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
-        <h1 id="city">
-          Stockholm,
-          <span id="country">Sweeden</span>
-        </h1>
-        <ul>
-          <li>Last updated at <span id="date">
-            Wednesday, 30 August 22:00
-            </span>
-          </li>
-          <li id="description">
-            Partly Cloudy
-          </li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy icon"
-                class="weather-icon float-left" id="icon"/>
-              <div class="float-left">
-                <span class="temperature" id="current-temperature"> 19</span><span class="units">
-                  <a href="#" id="celsius-link"> ˚C </a> |
-                  <a href="#" id="fahrenheid-link">˚F</a>
-                </span>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary">Temperature</button>
+                <button type="button" class="btn btn-primary">Rain</button>
+                <button type="button" class="btn btn-primary">Wind</button>
               </div>
             </div>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"></span> %</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
-            </ul>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary">Temperature</button>
-              <button type="button" class="btn btn-primary">Rain</button>
-              <button type="button" class="btn btn-primary">Wind</button>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center">
-          <div class="row align-items-start">
-            <div class="col sm day_block">
-              Monday <br /> 20 September
-              <br /> 15˚C
-            </div>
-            <div class="col sm day_block">
-              Tuesday <br /> 21 September
-              <br /> 14˚C
-            </div>
-            <div class="col sm day_block">
-              Wednesday <br /> 22 September
-              <br /> 12˚C
-            </div>
-            <div class="col sm day_block">
-              Thursday <br /> 23 September
-              <br /> 12˚C
-            </div>
-            <div class="col sm day_block">
-              Friday <br /> 24 September
-              <br /> 13˚C
-            </div>
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col sm day_block">
+                Monday <br /> 20 September
+                <br /> 15˚C
+              </div>
+              <div class="col sm day_block">
+                Tuesday <br /> 21 September
+                <br /> 14˚C
+              </div>
+              <div class="col sm day_block">
+                Wednesday <br /> 22 September
+                <br /> 12˚C
+              </div>
+              <div class="col sm day_block">
+                Thursday <br /> 23 September
+                <br /> 12˚C
+              </div>
+              <div class="col sm day_block">
+                Friday <br /> 24 September
+                <br /> 13˚C
+              </div>
 
+            </div>
           </div>
         </div>
-      </div>
-      <small>
-        <a href="https://github.com/Nikavi/My-weather-project" target="_blank">
-          Open-source code</a>, by Veronika Kulikova
-      </small>
+        <small>
+          <a href="https://github.com/Nikavi/My-weather-project" target="_blank">
+            Open-source code</a>, by Veronika Kulikova
+        </small>
       </div>
       <script src="index.js"></script>
 </body>
