@@ -38,6 +38,42 @@ function formatDate(timestamp) {
   return `${day}, ${dateCr} ${month} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+   let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+     forecastHTML = forecastHTML +
+       `
+  <div class="col-2">
+      <div clss="weather-forecast-date">${day}</div>
+      <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="42"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperatures-max">20˚</span>
+        <span class="weather-forecast-temperatures-min">10˚</span>
+      </div>
+    </div>
+  `;
+
+  })
+ 
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 // Let convert between °C/°F
 function showCelcius(event) {
   event.preventDefault();
@@ -55,6 +91,7 @@ function showFahrenheit(event) {
   let fahrenheiTemp = (celsiusTemperature * 9) / 5 + 32;
   tempEl.innerHTML = Math.round(fahrenheiTemp);
 }
+displayForecast();
 let celsiusTemperature = null;
 let convertCelsius = document.querySelector("#celsius-link");
 convertCelsius.addEventListener("click", showCelcius);
