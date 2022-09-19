@@ -1,4 +1,4 @@
-// Let current day
+// Let formate the current date
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let minutes = date.getMinutes();
@@ -35,19 +35,14 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
   let dateCr = date.getDate();
-  // calculate the date
   return `${day}, ${dateCr} ${month} ${hours}:${minutes}`;
 }
-
-
-//let presentData = document.querySelector("#date");
-//presentData.innerHTML = `${day}, ${date} ${month} ${time}:${minutes}`;
 
 // Let convert between °C/°F
 function showCelcius(event) {
   event.preventDefault();
   convertCelsius.classList.add("active");
-   convertFahrenheit.classList.remove("active");
+  convertFahrenheit.classList.remove("active");
   let tempEl = document.querySelector("#current-temperature");
   tempEl.innerHTML = Math.round(celsiusTemperature);
 }
@@ -55,7 +50,6 @@ function showCelcius(event) {
 function showFahrenheit(event) {
   event.preventDefault();
   let tempEl = document.querySelector("#current-temperature");
-  // remove the active class the celsius link
   convertCelsius.classList.remove("active");
   convertFahrenheit.classList.add("active");
   let fahrenheiTemp = (celsiusTemperature * 9) / 5 + 32;
@@ -66,16 +60,6 @@ let convertCelsius = document.querySelector("#celsius-link");
 convertCelsius.addEventListener("click", showCelcius);
 let convertFahrenheit = document.querySelector("#fahrenheid-link");
 convertFahrenheit.addEventListener("click", showFahrenheit);
-
-// Let display city
-//function searchCity(event) {
-// event.preventDefault();
-// let city = document.querySelector("#input-city").value;
-//let h1 = document.querySelector("h1");
-//h1.innerHTML = `${city}`;
-//}
-//let search_form = document.querySelector("#search-city-form");
-//search_form.addEventListener("submit", searchCity);
 
 // Search user input city
 function userInputCity(city) {
@@ -90,14 +74,14 @@ function showWeather(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  //let temperature = Math.round(response.data.main.temp);
+
   console.log(response.data.main.temp);
-  //h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
+
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-    celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
