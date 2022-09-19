@@ -26,7 +26,13 @@ li {
   text-align: left;
   list-style: none;
 }
-
+.weather-temperature .active {
+color:  rgb(33, 33, 33);
+cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;

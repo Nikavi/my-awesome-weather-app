@@ -46,16 +46,22 @@ function formatDate(timestamp) {
 // Let convert between °C/°F
 function showCelcius(event) {
   event.preventDefault();
+  convertCelsius.classList.add("active");
+   convertFahrenheit.classList.remove("active");
   let tempEl = document.querySelector("#current-temperature");
-  tempEl.innerHTML = 19;
+  tempEl.innerHTML = Math.round(celsiusTemperature);
 }
 
 function showFahrenheit(event) {
   event.preventDefault();
   let tempEl = document.querySelector("#current-temperature");
-  tempEl.innerHTML = Math.round(19 * 1.8 + 32);
+  // remove the active class the celsius link
+  convertCelsius.classList.remove("active");
+  convertFahrenheit.classList.add("active");
+  let fahrenheiTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempEl.innerHTML = Math.round(fahrenheiTemp);
 }
-
+let celsiusTemperature = null;
 let convertCelsius = document.querySelector("#celsius-link");
 convertCelsius.addEventListener("click", showCelcius);
 let convertFahrenheit = document.querySelector("#fahrenheid-link");
@@ -91,6 +97,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+    celsiusTemperature = response.data.main.temp;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
