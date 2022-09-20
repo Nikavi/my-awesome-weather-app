@@ -90,7 +90,7 @@ li {
 
 .weather-forecast {
   margin-top: 20px;
-  text-align: center; 
+  text-align: center;
   color: #000;
 }
 
@@ -99,11 +99,10 @@ li {
   opacity: 0.5;
 }
 
-.weather-forecast-temperatures-min{
+.weather-forecast-temperatures-min {
   opacity: 0.5;
 }
 
 .weather-forecast-temperatures {
   font-size: 13px;
-
 }
