@@ -33,7 +33,10 @@ li {
   text-align: left;
   list-style: none;
 }
-
+.form-control:focus {
+  border-color: #e3c690;
+  box-shadow: 0 0 0 0.2rem rgb(220 198 157 / 67%);
+}
 .weather-temperature .active {
   color: rgb(33, 33, 33);
   cursor: default;
@@ -131,4 +134,7 @@ li {
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+.link {
+  color:rgb(63, 28, 11);
 }
