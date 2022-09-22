@@ -168,4 +168,4 @@ button.addEventListener("click", getCurrentPosition);
 let searchForm = document.querySelector("#search-city-form");
 searchForm.addEventListener("submit", searchCity);
 
-userInputCity("New York");
+userInputCity("Stockholm");
