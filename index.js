@@ -159,6 +159,8 @@ function retrievePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let convertCelsius = document.querySelector("#celsius-link");
+  convertCelsius.click();
   axios.get(url).then(showWeather);
 }
 function getCurrentPosition(event) {
