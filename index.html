@@ -22,18 +22,18 @@
   <div class="text-center bg-image p-3">
 
     <div class="container">
-      <div class="weather-app-wrapper ">
+      <div class="weather-app-wrapper">
         <div class="weather-app  bg-text">
           <form class="weather-search-form" id="search-city-form">
             <div class="row">
-              <div class="col-6">
+              <div class="col-sm-6">
                 <input type="search" placeholder="Type a city.." autocomplete="off" class="form-control shadow-sm"
                   id="input-city" />
               </div>
-              <div class="col-3">
+              <div class="col-sm-3">
                 <input type="submit" value="Search" class="form-control btn btn-secondary shadow-sm" id="enter-city" />
               </div>
-              <div class="col-3">
+              <div class="col-sm-3">
                 <button class="btn btn-light btn-sm shadown-sm w-100" id="current-location-button">
                   Current
                 </button>
@@ -41,20 +41,22 @@
             </div>
           </form>
           <h1 id="city">
-            
+
             <span id="country"></span>
           </h1>
           <ul>
-            <li>Last updated at <span id="date">
-               
+            <li class="col-sm-6">Last updated at <br /><span id="date">
+
               </span>
             </li>
-            <li id="description">
-              
+            <br />
+            <li class="col-sm-6" id="description">
+
             </li>
           </ul>
+
           <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6">
               <div class="clearfix weather-temperature">
                 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy icon"
                   class="weather-icon float-left" id="icon" />
@@ -66,7 +68,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-sm-6">
               <ul>
                 <li>Humidity: <span id="humidity"></span> %</li>
                 <li>Wind: <span id="wind"></span> m/h</li>

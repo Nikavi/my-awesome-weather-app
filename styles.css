@@ -118,6 +118,8 @@ li {
 }
 
 .weather-forecast {
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 20px;
   text-align: center;
   color: #000;
