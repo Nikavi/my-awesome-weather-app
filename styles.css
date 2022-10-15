@@ -140,3 +140,15 @@ li {
 .link {
   color: rgb(63, 28, 11);
 }
+@media (max-width: 800px) {
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  #current-location-button {
+    margin-top: 10px;
+  }
+  #enter-city {
+    margin-top: 10px;
+  }
+}
